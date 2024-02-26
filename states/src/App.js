@@ -27,7 +27,7 @@ function App() {
         )
         .then((res) => {
           setStates(res.data);
-          setCities([]);
+          // setCities([]);
           setSelectedCity("");
           setSelectedState("");
         })
@@ -73,6 +73,7 @@ function App() {
           value={selectedState}
           onChange={(e) => setSelectedState(e.target.value)}
           className="dropdown"
+          disabled={!selectedCountry}
         >
           <option value="" disabled>
             Select State
@@ -85,6 +86,7 @@ function App() {
           value={selectedCity}
           onChange={(e) => setSelectedCity(e.target.value)}
           className="dropdown"
+          disabled={!selectedState}
         >
           <option value="" disabled>
             Select City
