@@ -20,7 +20,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (selectedCountry) {
+    // if (selectedCountry) {
       axios
         .get(
           `https://crio-location-selector.onrender.com/country=${selectedCountry}/states`
@@ -34,11 +34,11 @@ function App() {
         .catch((err) => {
           console.error("Error fetching states:", err);
         });
-    }
+    // }
   }, [selectedCountry]);
 
   useEffect(() => {
-    if (selectedCountry && selectedState) {
+    // if (selectedCountry && selectedState) {
       axios
         .get(
           `https://crio-location-selector.onrender.com/country=${selectedCountry}/state=${selectedState}/cities`
@@ -50,7 +50,7 @@ function App() {
         .catch((err) => {
           console.error("Error fetching Cities:", err);
         });
-    }
+    // }
   }, [selectedCountry, selectedState]);
 
   return (
