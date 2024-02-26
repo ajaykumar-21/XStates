@@ -60,11 +60,9 @@ function App() {
         <select
           value={selectedCountry}
           onChange={(e) => setSelectedCountry(e.target.value)}
-          // className="dropdown"
+          className="dropdown"
         >
-          <option value="" disabled>
-            Select Country
-          </option>
+          <option value="">Select Country</option>
           {countries.map((country) => {
             return <option key={country}>{country}</option>;
           })}
@@ -72,12 +70,10 @@ function App() {
         <select
           value={selectedState}
           onChange={(e) => setSelectedState(e.target.value)}
-          // className="dropdown"
+          className="dropdown"
           disabled={!selectedCountry}
         >
-          <option value="" disabled>
-            Select State
-          </option>
+          <option value="">Select State</option>
           {states.map((state) => {
             return <option key={state}>{state}</option>;
           })}
@@ -85,12 +81,10 @@ function App() {
         <select
           value={selectedCity}
           onChange={(e) => setSelectedCity(e.target.value)}
-          // className="dropdown"
+          className="dropdown"
           disabled={!selectedState}
         >
-          <option value="" disabled>
-            Select City
-          </option>
+          <option value="">Select City</option>
           {cities.map((city) => {
             return <option key={city}>{city}</option>;
           })}
