@@ -62,7 +62,7 @@ function App() {
           onChange={(e) => setSelectedCountry(e.target.value)}
           className="dropdown"
         >
-          <option value="">
+          <option value="" disabled>
             Select Country
           </option>
           {countries.map((country) => {
@@ -75,9 +75,7 @@ function App() {
           className="dropdown"
           disabled={!selectedCountry}
         >
-          <option value="">
-            Select State
-          </option>
+          <option value="">Select State</option>
           {states.map((state) => {
             return <option key={state}>{state}</option>;
           })}
@@ -88,9 +86,7 @@ function App() {
           className="dropdown"
           disabled={!selectedState}
         >
-          <option value="">
-            Select City
-          </option>
+          <option value="">Select City</option>
           {cities.map((city) => {
             return <option key={city}>{city}</option>;
           })}
