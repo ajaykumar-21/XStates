@@ -27,7 +27,7 @@ function App() {
         )
         .then((res) => {
           setStates(res.data);
-          // setCities([]);
+          setCities([]);
           setSelectedCity("");
           setSelectedState("");
         })
