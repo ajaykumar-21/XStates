@@ -66,7 +66,7 @@ function App() {
             Select Country
           </option>
           {countries.map((country) => {
-            return <option key={country}>{country}</option>;
+            return <option key={country} value={country}>{country}</option>;
           })}
         </select>
         <select
@@ -75,9 +75,11 @@ function App() {
           className="dropdown"
           disabled={!selectedCountry}
         >
-          <option value="">Select State</option>
+          <option value="" disabled>
+            Select State
+          </option>
           {states.map((state) => {
-            return <option key={state}>{state}</option>;
+            return <option key={state} value={state}>{state}</option>;
           })}
         </select>
         <select
@@ -86,9 +88,11 @@ function App() {
           className="dropdown"
           disabled={!selectedState}
         >
-          <option value="">Select City</option>
+          <option value="" disabled>
+            Select City
+          </option>
           {cities.map((city) => {
-            return <option key={city}>{city}</option>;
+            return <option key={city} value={city}>{city}</option>;
           })}
         </select>
       </div>
