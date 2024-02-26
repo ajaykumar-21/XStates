@@ -16,6 +16,7 @@ function App() {
       .then((res) => setCountries(res.data))
       .catch((err) => {
         console.error("Error fetching countries:", err);
+        alert("Failed to fetch countries. Please try again later.");
       });
   }, []);
 
@@ -33,6 +34,7 @@ function App() {
         })
         .catch((err) => {
           console.error("Error fetching states:", err);
+          alert("Failed to fetch states. Please try again later.");
         });
     }
   }, [selectedCountry]);
@@ -48,7 +50,8 @@ function App() {
           setSelectedCity("");
         })
         .catch((err) => {
-          console.error("Error fetching Cities:", err);
+          console.error("Error fetching cities:", err);
+          alert("Failed to fetch cities. Please try again later.");
         });
     }
   }, [selectedCountry, selectedState]);
@@ -66,7 +69,11 @@ function App() {
             Select Country
           </option>
           {countries.map((country) => {
-            return <option key={country} value={country}>{country}</option>;
+            return (
+              <option key={country} value={country}>
+                {country}
+              </option>
+            );
           })}
         </select>
         <select
@@ -79,7 +86,11 @@ function App() {
             Select State
           </option>
           {states.map((state) => {
-            return <option key={state} value={state}>{state}</option>;
+            return (
+              <option key={state} value={state}>
+                {state}
+              </option>
+            );
           })}
         </select>
         <select
@@ -92,7 +103,11 @@ function App() {
             Select City
           </option>
           {cities.map((city) => {
-            return <option key={city} value={city}>{city}</option>;
+            return (
+              <option key={city} value={city}>
+                {city}
+              </option>
+            );
           })}
         </select>
       </div>
