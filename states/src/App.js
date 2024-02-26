@@ -15,7 +15,7 @@ function App() {
       .get("https://crio-location-selector.onrender.com/countries")
       .then((res) => setCountries(res.data))
       .catch((err) => {
-        console.error("Error fetching countries:", err);
+        console.error("Error fetching country:", err);
         alert("Failed to fetch countries. Please try again later.");
       });
   }, []);
